@@ -1,0 +1,6 @@
+*.pyc
+**/__pycache__/
+*.exe
+generate.cpython-312.pyc
+command.txt
+

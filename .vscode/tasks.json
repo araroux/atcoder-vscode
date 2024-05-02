@@ -1,0 +1,57 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "login",
+            "detail": "ログイン",
+            "type": "shell",
+            "command": "oj login -u 'rouxkoji' -p 'aratako44' 'https://atcoder.jp/'"
+        },
+        {
+            "label": "login check",
+            "detail": "ログインチェック",
+            "type": "shell",
+            "command": "oj login --check 'https://atcoder.jp/'"
+        },
+        {
+            "label": "download problem",
+            "detail": "問題ダウンロード",
+            "type": "shell",
+            "command": "mkdir ${input:problemNo}; cd ${workspaceFolder}\\${input:problemNo}; oj-prepare https://atcoder.jp/contests/${input:problemNo}"
+        },
+        {
+            "label": "test",
+            "detail": "テスト",
+            "type": "shell",
+            "command": "cd ${workspaceFolder}\\${relativeFileDirname}; oj test -c 'python ${file}' -t 2",
+        },
+        {
+            "label": "submit (CPython 3.11.4)",
+            "detail": "提出(CPython 3.11.4) 5055",
+            "type": "shell",
+            "command": "cd ${workspaceFolder}\\${relativeFileDirname}; oj submit ${fileBasename} -l 5055"
+        },
+        {
+            "label": "submit (Cython 0.29.34)",
+            "detail": "提出(Cython 0.29.34) 5082",
+            "type": "shell",
+            "command": "cd ${workspaceFolder}\\${relativeFileDirname}; oj submit ${fileBasename} -l 5082"
+        },
+        {
+            "label": "submit (PyPy 3.10-v7.3.12)",
+            "detail": "提出(PyPy 3.10-v7.3.12) 5078",
+            "type": "shell",
+            "command": "cd ${workspaceFolder}\\${relativeFileDirname}; oj submit ${fileBasename} -l 5078"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "problemNo", // ${input:***}で指定したID
+            "description": "AtCoderの問題Noを入力", // 入力説明文
+            "default": "", // デフォルト入力値
+            "type": "promptString" // 入力タイプ
+        }
+    ]
+}
