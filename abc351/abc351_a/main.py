@@ -26,4 +26,4 @@ def main2():
     print(c)
 
 if __name__ == '__main__':
-    main2()
+    main()

@@ -25,7 +25,7 @@ def main():
     solve(a1, b1)
 
 def main2():
-    with open("./abc351/abc351_b/test/sample-2.in") as f:
+    with open("./abc351/abc351_b/test/sample-1.in") as f:
         #tokens = iter(f.read().split())
         alist = f.read().split() 
 
